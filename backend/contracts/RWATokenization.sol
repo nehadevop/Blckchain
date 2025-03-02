@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/utils/Counters.sol";
+import "../contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "../contracts/access/Ownable.sol";
+import "../contracts/utils/Counters.sol";
 
 /**
  * @title RWATokenization
@@ -36,7 +36,7 @@ contract RWATokenization is ERC721URIStorage, Ownable {
     event VerifierRemoved(address indexed verifier);
     event CollateralStatusChanged(uint256 indexed tokenId, bool isCollateral);
     
-    constructor() ERC721("Real World Asset Token", "RWAT") Ownable(msg.sender) {}
+    constructor() ERC721("Real World Asset Token", "RWAT") Ownable() {}
     
     /**
      * @dev Add a verifier who can verify tokenized assets
